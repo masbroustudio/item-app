@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  # Mengatur service dengan nama doker image item-app
+  item-app:
+    image: ghcr.io/masbroustudio/item-app:v1
+    ports:
+      - "80:8080"  # Membuat port 80 di host ke port 8080 di kontainer
+    depends_on:
+      - item-db  # Membuat item-db berjalan sebelum item-app
+    restart: always  # Membuat docker kontainer restart menjadi selalu
+
+  # Service dengan database item-db
+  item-db:
+    image: mongo:3
+    volumes:
+      - app-db:/data/db  # Membuat nama volume app-db untuk database item-db
+
+volumes:
+  app-db:  # Inisialisasi volume app-db
