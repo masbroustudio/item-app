@@ -1,20 +1,22 @@
-# Menggunakan base image Node.js versi 14
+# Menentukan image dasar yang akan digunakan untuk membangun image baru. 
+# Dalam hal ini, image dasar yang digunakan adalah node:14.
 FROM node:14
 
-# Menentukan working directory untuk container
+# Menentukan working directory didalam container
 WORKDIR /app
 
-# Menyalin seluruh source code ke working directory di container
+# Menyalin semua file dari direktori saat ini ke direktori kerja di dalam container.
 COPY . .
 
-# Menentukan agar aplikasi berjalan dalam production mode dan menggunakan container bernama item-db sebagai database host
+# Menetapkan variabel NODE_ENV dan DB_HOST. 
+# Nilai NODE_ENV diatur ke production, nilai DB_HOST diatur ke item-db.
 ENV NODE_ENV=production DB_HOST=item-db
 
-# Menginstal dependencies untuk production dan kemudian build aplikasi
+# Menginstal semua dependensi yang diperlukan untuk aplikasi
 RUN npm install --production --unsafe-perm && npm run build
 
-# Ekspos port yang digunakan oleh aplikasi (8080)
+# Mengekspos port 8080 di dalam container
 EXPOSE 8080
 
-# Saat container diluncurkan, jalankan server dengan perintah npm start
+# Menentukan perintah default yang akan dijalankan ketika container dimulai
 CMD ["npm", "start"]

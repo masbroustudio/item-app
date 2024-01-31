@@ -1,16 +1,17 @@
 #!/bin/bash
+# Menentukan shell yang akan digunakan untuk menjalankan skrip
 
-# Membuat Docker Image item-app tag v1
-docker build -t item-app:v1 .
+# Membangun image Docker item-app:v1 dari Dockerfile yang terletak di direktori saat ini 
+docker build -t item-app:v1.1 .
 
-# Menmpilkan daftar docker images
+# Menampilkan daftar image Docker yang ada di sistem
 docker images
 
-# Menunggah docker image item-app ke Github Packages
-docker tag item-app:v1 ghcr.io/masbroustudio/item-app:v1
+# Mengunggah docker image item-app ke Github Packages
+docker tag item-app:v1 ghcr.io/masbroustudio/item-app:v1.1
 
-# Melihat status Login Github
+# Melakukan login ke GitHub Container Registry menggunakan token akses yang disimpan dalam variabel lingkungan $GH_PACKAGES_TOKEN
 echo $GH_PACKAGES_TOKEN | docker login ghcr.io -u masbroustudio --password-stdin
 
-# Mengunggah docker image item-app ke GitHub Packages
-docker push ghcr.io/masbroustudio/item-app:v1
+# Mengunggah docker image item-app ke GitHub Container Registry
+docker push ghcr.io/masbroustudio/item-app:v1.1
