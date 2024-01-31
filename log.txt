@@ -4,6 +4,10 @@ item-app-1  | > node ./bin/www
 item-app-1  | 
 item-app-1  | NODE_ENV: production
 item-app-1  | Connected to database
+item-app-1  | [0mGET / [36m304 [0m152.946 ms - -[0m
+item-app-1  | [0mGET /javascripts/dist/dist.min.js [32m200 [0m4.166 ms - 186999[0m
+item-app-1  | [0mGET /stylesheets/style.css [32m200 [0m27.367 ms - 519[0m
+item-app-1  | [0mGET /api [32m200 [0m12.256 ms - 171[0m
 item-db-1   | 2024-01-31T09:53:08.466+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=33cc5bde4acc
 item-db-1   | 2024-01-31T09:53:08.466+0000 I CONTROL  [initandlisten] db version v3.6.23
 item-db-1   | 2024-01-31T09:53:08.466+0000 I CONTROL  [initandlisten] git version: d352e6a4764659e0d0350ce77279de3c1f243e5c
@@ -41,3 +45,7 @@ item-db-1   | 2024-01-31T09:53:09.006+0000 I INDEX    [LogicalSessionCacheRefres
 item-db-1   | 2024-01-31T09:53:09.007+0000 I INDEX    [LogicalSessionCacheRefresh] build index done.  scanned 0 total records. 0 secs
 item-db-1   | 2024-01-31T09:53:09.379+0000 I NETWORK  [listener] connection accepted from 172.23.0.3:43172 #1 (1 connection now open)
 item-db-1   | 2024-01-31T09:53:09.383+0000 I NETWORK  [conn1] received client metadata from 172.23.0.3:43172 conn1: { driver: { name: "nodejs", version: "2.2.36" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "5.15.133.1-microsoft-standard-WSL2" }, platform: "Node.js v14.21.3, LE, mongodb-core: 2.1.20" }
+item-db-1   | 2024-01-31T09:55:01.406+0000 I STORAGE  [conn1] createCollection: accumulator.documents with generated UUID: 95e82b9b-90af-4d5a-b675-da0a98e2c843
+item-db-1   | 2024-01-31T10:15:43.868+0000 I NETWORK  [conn1] end connection 172.23.0.3:43172 (0 connections now open)
+item-db-1   | 2024-01-31T10:15:45.142+0000 I NETWORK  [listener] connection accepted from 172.23.0.3:58688 #2 (1 connection now open)
+item-db-1   | 2024-01-31T10:15:45.144+0000 I NETWORK  [conn2] received client metadata from 172.23.0.3:58688 conn2: { driver: { name: "nodejs", version: "2.2.36" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "5.15.133.1-microsoft-standard-WSL2" }, platform: "Node.js v14.21.3, LE, mongodb-core: 2.1.20" }
